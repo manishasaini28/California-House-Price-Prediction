@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>California House Price Prediction</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <!-- Google Font -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header class="navbar">
+
+    <div class="logo">
+
+        <i class="fa-solid fa-house"></i>
+
+        <span>House Price AI</span>
+
+    </div>
+
+    <nav>
+
+        <a href="/" class="active">
+
+            <i class="fa-solid fa-house"></i>
+
+            Home
+
+        </a>
+
+        <a href="/dashboard">
+
+            <i class="fa-solid fa-chart-line"></i>
+
+            Dashboard
+
+        </a>
+
+        <a href="#about">
+
+            <i class="fa-solid fa-circle-info"></i>
+
+            About
+
+        </a>
+
+    </nav>
+
+</header>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="overlay">
+
+        <h1>
+
+            <i class="fa-solid fa-building"></i>
+
+            California House Price Prediction
+
+        </h1>
+
+        <!-- <p>
+
+            Predict California House Prices using Machine Learning &
+            Random Forest Regression
+
+        </p> -->
+
+    </div>
+
+</section>
+
+<!-- ================= MAIN ================= -->
+
+<div class="main-container">
+
+<div class="top-section">
+
+<!-- ================= LEFT CARD ================= -->
+
+<div class="card">
+
+<h2>
+
+<i class="fa-solid fa-pen"></i>
+
+Enter House Details
+
+</h2>
+
+<form action="/predict" method="POST">
+
+<div class="grid">
+
+<div class="input-box">
+
+<label>
+
+<i class="fa-solid fa-location-dot"></i>
+
+Longitude
+
+</label>
+
+<input
+type="number"
+step="any"
+name="longitude"
+placeholder="-122.23"
+required>
+
+</div>
+
+<div class="input-box">
+
+<label>
+
+<i class="fa-solid fa-location-dot"></i>
+
+Latitude
+
+</label>
+
+<input
+type="number"
+step="any"
+name="latitude"
+placeholder="37.88"
+required>
+
+</div>
+
+<div class="input-box">
+
+<label>
+
+<i class="fa-solid fa-house"></i>
+
+Housing Age
+
+</label>
+
+<input
+type="number"
+step="any"
+name="housing_median_age"
+placeholder="41"
+required>
+
+</div>
+
+<div class="input-box">
+
+<label>
+
+<i class="fa-solid fa-door-open"></i>
+
+Total Rooms
+
+</label>
+
+<input
+type="number"
+step="any"
+name="total_rooms"
+placeholder="880"
+required>
+
+</div>
+
+<div class="input-box">
+
+<label>
+
+<i class="fa-solid fa-bed"></i>
+
+Total Bedrooms
+
+</label>
+
+<input
+type="number"
+step="any"
+name="total_bedrooms"
+placeholder="129"
+required>
+
+</div>
+
+<div class="input-box">
+
+<label>
+
+<i class="fa-solid fa-users"></i>
+
+Population
+
+</label>
+
+<input
+type="number"
+step="any"
+name="population"
+placeholder="322"
+required>
+
+</div>
+
+<div class="input-box">
+
+<label>
+
+<i class="fa-solid fa-building"></i>
+
+Households
+
+</label>
+
+<input
+type="number"
+step="any"
+name="households"
+placeholder="126"
+required>
+
+</div>
+
+<div class="input-box">
+
+<label>
+
+<i class="fa-solid fa-dollar-sign"></i>
+
+Median Income
+
+</label>
+
+<input
+type="number"
+step="any"
+name="median_income"
+placeholder="8.3252"
+required>
+
+</div>
+
+</div>
+
+<div class="input-box full">
+
+<label>
+
+<i class="fa-solid fa-water"></i>
+
+Ocean Proximity
+
+</label>
+
+<select name="ocean_proximity">
+
+<option value="NEAR BAY">NEAR BAY</option>
+
+<option value="&lt;1H OCEAN">&lt;1H OCEAN</option>
+
+<option value="INLAND">INLAND</option>
+
+<option value="NEAR OCEAN">NEAR OCEAN</option>
+
+<option value="ISLAND">ISLAND</option>
+
+</select>
+
+</div>
+
+<button type="submit" class="predict-btn">
+
+<i class="fa-solid fa-wand-magic-sparkles"></i>
+
+Predict House Price
+
+</button>
+
+<!-- ================= RIGHT CARD ================= -->
+
+</form>
+
+</div>
+
+<div class="card prediction-card">
+
+<h2>
+
+<i class="fa-solid fa-sack-dollar"></i>
+
+Predicted House Price
+
+</h2>
+
+{% if prediction %}
+
+<div class="price-card">
+
+<div class="success-icon">
+
+<i class="fa-solid fa-circle-check"></i>
+
+</div>
+
+<h1>{{ prediction }}</h1>
+
+<p>Estimated House Price</p>
+
+<div class="prediction-status">
+
+<i class="fa-solid fa-badge-check"></i>
+
+Prediction Completed Successfully
+
+</div>
+
+</div>
+
+{% else %}
+
+<div class="price-card">
+
+<div class="empty-icon">
+
+<i class="fa-solid fa-house-circle-exclamation"></i>
+
+</div>
+
+<h1>----</h1>
+
+<p>Your prediction will appear here</p>
+
+</div>
+
+{% endif %}
+
+<div class="stats">
+
+<div class="stat-box">
+
+<i class="fa-solid fa-robot"></i>
+
+<h3>Model</h3>
+
+<p>Random Forest</p>
+
+</div>
+
+<div class="stat-box">
+
+<i class="fa-solid fa-bullseye"></i>
+
+<h3>R² Score</h3>
+
+<p>0.817</p>
+
+</div>
+
+<div class="stat-box">
+
+<i class="fa-solid fa-chart-line"></i>
+
+<h3>MAE</h3>
+
+<p>$31,636</p>
+
+</div>
+
+<div class="stat-box">
+
+<i class="fa-solid fa-database"></i>
+
+<h3>Dataset</h3>
+
+<p>20,640 Rows</p>
+
+</div>
+
+</div>
+
+<a href="/dashboard" class="dashboard-btn">
+
+<i class="fa-solid fa-chart-column"></i>
+
+View Analytics Dashboard
+
+</a>
+
+</div>
+
+</div>
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about" class="about-section">
+
+<div class="about-card">
+
+<h2>
+
+<i class="fa-solid fa-circle-info"></i>
+
+About This Project
+
+</h2>
+
+<p>
+
+This project predicts California house prices using a
+Machine Learning Regression Model.
+
+The model is trained on the California Housing Dataset
+using Random Forest Regressor.
+
+</p>
+
+<div class="about-grid">
+
+<div>
+
+<h3>
+
+<i class="fa-solid fa-code"></i>
+
+Technology
+
+</h3>
+
+<p>
+
+Python<br>
+
+Flask<br>
+
+Machine Learning
+
+</p>
+
+</div>
+
+<div>
+
+<h3>
+
+<i class="fa-solid fa-book"></i>
+
+Libraries
+
+</h3>
+
+<p>
+
+Pandas<br>
+
+NumPy<br>
+
+Scikit-Learn<br>
+
+Matplotlib
+
+</p>
+
+</div>
+
+<div>
+
+<h3>
+
+<i class="fa-solid fa-brain"></i>
+
+Algorithm
+
+</h3>
+
+<p>
+
+Random Forest Regressor
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</div>
+
+</body>
+
+</html>
+

@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Analytics Dashboard</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+<div class="logo">
+
+<i class="fa-solid fa-house"></i>
+
+<span>House Price AI</span>
+
+</div>
+
+<nav>
+
+<a href="/">
+
+<i class="fa-solid fa-house"></i>
+
+Home
+
+</a>
+
+<a href="/dashboard" class="active">
+
+<i class="fa-solid fa-chart-line"></i>
+
+Dashboard
+
+</a>
+
+</nav>
+
+</header>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+<div class="overlay">
+
+<h1>
+
+<i class="fa-solid fa-chart-column"></i>
+
+Analytics Dashboard
+
+</h1>
+
+<p>
+
+Machine Learning Model Performance & Data Analysis
+
+</p>
+
+</div>
+
+</section>
+
+<!-- ================= MAIN ================= -->
+
+<div class="main-container">
+
+<div class="card">
+
+<h2>
+
+<i class="fa-solid fa-chart-simple"></i>
+
+Model Performance
+
+</h2>
+
+<div class="stats">
+
+<div class="stat-box">
+
+<i class="fa-solid fa-robot"></i>
+
+<h3>Model</h3>
+
+<p>Random Forest</p>
+
+</div>
+
+<div class="stat-box">
+
+<i class="fa-solid fa-bullseye"></i>
+
+<h3>Accuracy</h3>
+
+<p>81.7%</p>
+
+</div>
+
+<div class="stat-box">
+
+<i class="fa-solid fa-chart-line"></i>
+
+<h3>MAE</h3>
+
+<p>$31,636</p>
+
+</div>
+
+<div class="stat-box">
+
+<i class="fa-solid fa-database"></i>
+
+<h3>Dataset</h3>
+
+<p>20,640 Rows</p>
+
+</div>
+
+</div>
+
+</div>
+
+<br>
+
+<!-- ================= GRAPH SECTION ================= -->
+
+<div class="graphs">
+
+<div class="graph-card">
+
+<h3>
+
+<i class="fa-solid fa-arrow-trend-up"></i>
+
+Income vs House Price
+
+</h3>
+
+<img src="{{ url_for('static', filename='charts/income_vs_price.png') }}"
+alt="Income Graph">
+
+<p>
+
+Higher Median Income generally results in Higher House Prices.
+
+</p>
+
+</div>
+
+<!-- ================= GRAPH 2 ================= -->
+
+<div class="graph-card">
+
+<h3>
+
+<i class="fa-solid fa-ranking-star"></i>
+
+Feature Importance
+
+</h3>
+
+<img src="{{ url_for('static', filename='charts/feature_importance.png') }}"
+alt="Feature Importance">
+
+<p>
+
+This graph shows which features contribute the most to the prediction.
+
+</p>
+
+</div>
+
+</div>
+
+<br><br>
+
+<!-- ================= MODEL INSIGHTS ================= -->
+
+<div class="card">
+
+<h2>
+
+<i class="fa-solid fa-lightbulb"></i>
+
+Model Insights
+
+</h2>
+
+<div class="stats">
+
+<div class="stat-box">
+
+<i class="fa-solid fa-money-bill-trend-up"></i>
+
+<h3>Most Important Feature</h3>
+
+<p>Median Income</p>
+
+</div>
+
+<div class="stat-box">
+
+<i class="fa-solid fa-location-dot"></i>
+
+<h3>Location Impact</h3>
+
+<p>High</p>
+
+</div>
+
+<div class="stat-box">
+
+<i class="fa-solid fa-house"></i>
+
+<h3>Housing Age</h3>
+
+<p>Medium Impact</p>
+
+</div>
+
+<div class="stat-box">
+
+<i class="fa-solid fa-users"></i>
+
+<h3>Population</h3>
+
+<p>Low Impact</p>
+
+</div>
+
+</div>
+
+</div>
+
+<br>
+
+<!-- ================= DATASET INFORMATION ================= -->
+
+<div class="card">
+
+<h2>
+
+<i class="fa-solid fa-circle-info"></i>
+
+Dataset Information
+
+</h2>
+
+<div class="about-grid">
+
+<div>
+
+<i class="fa-solid fa-database fa-2x"></i>
+
+<h3>Total Records</h3>
+
+<p>20,640 Houses</p>
+
+</div>
+
+<div>
+
+<i class="fa-solid fa-table-columns fa-2x"></i>
+
+<h3>Features</h3>
+
+<p>8 Numerical + 1 Categorical</p>
+
+</div>
+
+<div>
+
+<i class="fa-solid fa-brain fa-2x"></i>
+
+<h3>Algorithm</h3>
+
+<p>Random Forest Regressor</p>
+
+</div>
+
+</div>
+
+</div>
+
+<br>
+
+<!-- ================= PROJECT INFORMATION ================= -->
+
+<div class="card">
+
+    <h2>
+
+        <i class="fa-solid fa-circle-info"></i>
+
+        Project Information
+
+    </h2>
+
+    <div class="about-grid">
+
+        <div>
+
+            <i class="fa-solid fa-code fa-2x"></i>
+
+            <h3>Framework</h3>
+
+            <p>
+
+                Flask
+
+            </p>
+
+        </div>
+
+        <div>
+
+            <i class="fa-solid fa-gears fa-2x"></i>
+
+            <h3>Libraries</h3>
+
+            <p>
+
+                Pandas<br>
+
+                NumPy<br>
+
+                Scikit-Learn<br>
+
+                Matplotlib
+
+            </p>
+
+        </div>
+
+        <div>
+
+            <i class="fa-solid fa-microchip fa-2x"></i>
+
+            <h3>Machine Learning</h3>
+
+            <p>
+
+                Random Forest Regressor
+
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<br><br>
+
+<!-- ================= BUTTONS ================= -->
+
+<!-- <div style="display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;">
+
+<a href="/"
+class="dashboard-btn">
+
+<i class="fa-solid fa-house"></i>
+
+Back to Prediction
+
+</a>
+
+</div> -->
+<div class="back-btn-container">
+
+    <a href="/" class="dashboard-btn">
+        <i class="fa-solid fa-house"></i>
+        Back to Prediction
+    </a>
+
+</div>
+
+</div>
+
+</body>
+
+</html>
