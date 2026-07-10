@@ -1,7 +1,4 @@
-/* ==========================================
-        GOOGLE FONT
-========================================== */
-
+/* GOOGLE FONT */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 *{
@@ -15,27 +12,7 @@ html{
     scroll-behavior:smooth;
 }
 
-/* ==========================================
-        BODY
-========================================== */
-
-/* body{
-
-    background:
-    linear-gradient(rgba(10,20,40,.78),
-    rgba(10,20,40,.82)),
-    url("images/house_bg.jpg");
-
-    background-size:cover;
-    background-position:center;
-    background-attachment:fixed;
-
-    min-height:100vh;
-
-    color:white;
-
-} */
-
+/* BODY */
 body{
 
     background:
@@ -51,10 +28,7 @@ body{
 
 }
 
-/* ==========================================
-        NAVBAR
-========================================== */
-
+/* NAVBAR*/
 .navbar{
 
     width:100%;
@@ -143,10 +117,7 @@ body{
 
 }
 
-/* ==========================================
-        HERO
-========================================== */
-
+/* HERO */
 .hero{
 
     height:420px;
@@ -162,25 +133,7 @@ body{
     padding-top:90px;
 
 }
-
-/* .overlay{
-
-    width:85%;
-
-    max-width:900px;
-
-    background:rgba(255,255,255,.08);
-
-    backdrop-filter:blur(20px);
-
-    padding:50px;
-
-    border-radius:30px;
-
-    box-shadow:0 15px 40px rgba(0,0,0,.35);
-
-} */
- .overlay{
+  .overlay{
 
     width:85%;
 
@@ -197,8 +150,7 @@ body{
     padding:55px;
 
 }
-
-.overlay h1{
+ .overlay h1{
 
     font-size:48px;
 
@@ -224,10 +176,7 @@ body{
 
 }
 
-/* ==========================================
-        MAIN CONTAINER
-========================================== */
-
+/* MAIN CONTAINER */
 .main-container{
 
     width:90%;
@@ -248,41 +197,7 @@ body{
 
 }
 
-/* ==========================================
-        GLASS CARD
-========================================== */
-
-/* .card{
-
-    background:rgba(255,255,255,.10);
-
-    backdrop-filter:blur(18px);
-
-    border-radius:25px;
-
-    padding:35px;
-
-    border:1px solid rgba(255,255,255,.15);
-
-    box-shadow:0 15px 35px rgba(0,0,0,.25);
-
-}
-
-.card h2{
-
-    margin-bottom:28px;
-
-    font-size:28px;
-
-} */
-
-/* .card h2 i{
-
-    color:#FFD43B;
-
-    margin-right:10px;
-
-} */
+/* GLASS CARD */
 .card{
 
     background:rgba(15,30,60,.85);
@@ -330,11 +245,7 @@ body{
 
 }
 
-
-/* ==========================================
-        FORM
-========================================== */
-
+/* FORM */
 .grid{
 
     display:grid;
@@ -371,27 +282,7 @@ body{
 
 }
 
-/* input,
-select{
-
-    width:100%;
-
-    padding:15px;
-
-    border:none;
-
-    border-radius:12px;
-
-    background:rgba(255,255,255,.15);
-
-    color:white;
-
-    font-size:15px;
-
-    outline:none;
-
-} */
-input,
+ input,
 select{
 
     width:100%;
@@ -433,10 +324,7 @@ select option{
 
 }
 
-/* ==========================================
-        BUTTON
-========================================== */
-
+/*  BUTTON */
 .predict-btn{
 
     width:100%;
@@ -477,10 +365,7 @@ select option{
 
 }
 
-/* ==========================================
-        PREDICTION CARD
-========================================== */
-
+/* PREDICTION CARD */
 .prediction-card{
 
     display:flex;
@@ -491,24 +376,7 @@ select option{
 
 }
 
-/* .price-card{
-
-    background:rgba(255,255,255,.12);
-
-    backdrop-filter:blur(15px);
-
-    border-radius:20px;
-
-    padding:35px;
-
-    text-align:center;
-
-    border:1px solid rgba(255,255,255,.15);
-
-    margin-bottom:25px;
-
-} */
- .price-card{
+.price-card{
 
     background:#13294D;
 
@@ -572,10 +440,7 @@ select option{
 
 }
 
-/* ==========================================
-        STATS
-========================================== */
-
+/* STATS */
 .stats{
 
     display:grid;
@@ -588,22 +453,7 @@ select option{
 
 }
 
-/* .stat-box{
-
-    background:rgba(255,255,255,.10);
-
-    border-radius:18px;
-
-    padding:22px;
-
-    text-align:center;
-
-    transition:.35s;
-
-    border:1px solid rgba(255,255,255,.12);
-
-} */
- .stat-box{
+.stat-box{
 
     background:#13294D;
 
@@ -645,10 +495,7 @@ select option{
 
 }
 
-/* 
-        DASHBOARD BUTTON
- */
-
+/*  DASHBOARD BUTTON*/
 .dashboard-btn{
 
     display:block;
@@ -691,30 +538,14 @@ select option{
 
 }
 
-/* ==========================================
-        ABOUT SECTION
-========================================== */
-
+ /* ABOUT SECTION */
 .about-section{
 
     margin-top:60px;
 
 }
 
-/* .about-card{
-
-    background:rgba(255,255,255,.10);
-
-    backdrop-filter:blur(15px);
-
-    border-radius:25px;
-
-    padding:35px;
-
-    border:1px solid rgba(255,255,255,.15);
-
-} */
- .about-card{
+.about-card{
 
 background:rgba(15,30,60,.85);
 
@@ -746,18 +577,7 @@ background:rgba(15,30,60,.85);
 
 }
 
-/* .about-grid div{
-
-    background:rgba(255,255,255,.08);
-
-    border-radius:18px;
-
-    padding:25px;
-
-    text-align:center;
-
-} */
- .about-grid div{
+.about-grid div{
 
 background:#13294D;
 
@@ -777,10 +597,7 @@ background:#13294D;
 
 }
 
-/* ==========================================
-        FOOTER
-========================================== */
-
+/* FOOTER */
 .footer{
 
     margin-top:60px;
@@ -852,10 +669,7 @@ background:#13294D;
 }
 
 
-/* ==========================================
-            ANIMATIONS
-========================================== */
-
+/* ANIMATIONS*/
 @keyframes fadeUp{
 
 0%{
@@ -928,10 +742,7 @@ nav{
 animation:fadeRight 1s ease;
 }
 
-/* ==========================================
-            HOVER EFFECTS
-========================================== */
-
+/* HOVER EFFECTS */
 input:hover,
 select:hover{
 
@@ -986,10 +797,7 @@ box-shadow:0 15px 35px rgba(0,0,0,.3);
 
 }
 
-/* ==========================================
-            SCROLLBAR
-========================================== */
-
+/* SCROLLBAR */ 
 ::-webkit-scrollbar{
 
 width:10px;
@@ -1016,9 +824,7 @@ background:#8B5CF6;
 
 }
 
-/* ==========================================
-            RESPONSIVE
-========================================== */
+/*  RESPONSIVE */
 
 @media(max-width:1200px){
 
@@ -1222,8 +1028,5 @@ font-size:15px;
 .back-btn-container .dashboard-btn i{
 
     margin-right:10px;
-
+    
 }
-/* ==========================================
-            END OF FILE
-========================================== */
