@@ -4,35 +4,27 @@ import pandas as pd
 
 app = Flask(__name__)
 
-# ===========================
 # Load Trained Model
-# ===========================
 
 with open("model.pkl", "rb") as file:
     model = pickle.load(file)
 
 
-# ===========================
 # Home Page
-# ===========================
 
 @app.route("/")
 def home():
     return render_template("index.html")
 
 
-# ===========================
 # Dashboard Page
-# ===========================
 
 @app.route("/dashboard")
 def dashboard():
     return render_template("dashboard.html")
 
 
-# ===========================
 # Prediction
-# ===========================
 
 @app.route("/predict", methods=["POST"])
 def predict():
@@ -70,9 +62,7 @@ def predict():
         )
 
 
-# ===========================
 # Run App
-# ===========================
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True , port=5002)
